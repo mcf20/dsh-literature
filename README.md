@@ -1,5 +1,10 @@
 # dsh-literature
 
+[![test](https://github.com/mcf20/dsh-literature/actions/workflows/test.yml/badge.svg)](https://github.com/mcf20/dsh-literature/actions/workflows/test.yml)
+[![node](https://img.shields.io/badge/node-%E2%89%A522.19-brightgreen)](https://nodejs.org)
+[![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![version](https://img.shields.io/github/package-json/v/mcf20/dsh-literature)](package.json)
+
 给 DeepSeek Harness 用的**文献检索 + 全文获取**插件。
 
 检索只负责找线索；拿到正文是另一件事，按"官方接口 → OA 副本 → 浏览器 → 人工一步"逐级降级。
