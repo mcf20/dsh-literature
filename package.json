@@ -1,0 +1,69 @@
+{
+  "name": "dsh-literature",
+  "version": "0.2.0",
+  "description": "Literature retrieval that actually reaches full text: parallel OpenAlex / Crossref / arXiv / PubMed search, DOI+title de-duplication, open-access resolution chain, PDF download, and PDF-to-Markdown with a local full-text library.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "icon": "./assets/icon.svg",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": ">=0.1.0-rc.6",
+    "@deepseek-ai/schemastery": ">=3.18.1"
+  },
+  "dependencies": {
+    "pdf-parse": "^2.4.5",
+    "undici": "^8.12.4"
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "literature",
+    "full-text",
+    "pdf",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "pubmed",
+    "unpaywall",
+    "elsevier"
+  ],
+  "files": [
+    "lib",
+    "locale",
+    "assets",
+    "test",
+    "cordis.patch.yml",
+    "install.mjs",
+    "README.md",
+    "INSTALL.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "WORKFLOW.md"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcf20/dsh-literature.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mcf20/dsh-literature/issues"
+  },
+  "homepage": "https://github.com/mcf20/dsh-literature#readme"
+}

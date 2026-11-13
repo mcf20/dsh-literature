@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "dsh-literature",
+    "description": "多源文献检索与开放获取全文解析：并行检索 OpenAlex、Crossref、arXiv、PubMed，按 DOI 与标题去重，按链路解析 OA 全文，下载 PDF 并转 Markdown，形成本地可检索全文库。"
+  }
+}

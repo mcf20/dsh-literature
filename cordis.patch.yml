@@ -1,0 +1,18 @@
+# dsh-literature bundle layer.
+#
+# Mounts ONE row with the shipped defaults. Override any field from the
+# profile's own `cordis.patch.yml` (a patch replaces the whole `config`, so
+# restate every key you keep):
+#
+#   - id: literature
+#     config:
+#       dataDir: E:/Ai4retrival/.paperlib
+#       openalexMailto: you@example.com
+#       unpaywallEmail: you@example.com
+#       defaultSources: [openalex, arxiv]
+#
+# No secret ever lives here: `coreApiKeyEnv` names a credential reference that
+# the plugin resolves through the dsh credentials service.
+- insert:
+    - id: literature
+      name: dsh-literature

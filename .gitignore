@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output
+*.tgz
+*.zip
+
+# Local debug scripts (one-off probes, not part of the plugin)
+scripts/
+
+# Machine-specific state
+*.log
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Local plugin data (papers, library, Chrome profile)
+.dsh-literature/
+tmp-dl/

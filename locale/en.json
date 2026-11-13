@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "dsh-literature",
+    "description": "Multi-source literature search with open-access full-text resolution: OpenAlex, Crossref, arXiv and PubMed in parallel, DOI+title de-duplication, OA link chain, PDF download, and PDF-to-Markdown for a local full-text library."
+  }
+}

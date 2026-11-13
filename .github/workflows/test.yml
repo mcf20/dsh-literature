@@ -1,0 +1,41 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        # The plugin uses Node's built-in WebSocket (22.19+), so both lines are tested.
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Run unit tests
+        run: npm test
+
+      - name: Check the plugin loads and registers tools
+        shell: bash
+        run: |
+          node -e "
+          import('./lib/index.js').then((module) => {
+            const tools = [];
+            module.apply({ tools: { register: (tool) => tools.push(tool.name) }, systemPrompt: { section() {} }, get: () => undefined }, module.Config({}));
+            if (tools.length !== 8) { console.error('expected 8 tools, got ' + tools.length); process.exit(1); }
+            console.log(tools.join(', '));
+          }).catch((error) => { console.error(error.message); process.exit(1); });
+          "
