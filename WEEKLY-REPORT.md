@@ -130,3 +130,15 @@ arXiv 直连、Elsevier 官方 API（XML 正文）、Europe PMC、ACS 订阅、N
 - 代码遵循 MIT 许可
 - 插件不含任何反爬绕过逻辑：只使用公开接口、出版社授权通道，以及读者本人的浏览器会话
 - 论文版权归各自版权方，工具仅按其所在机构的订阅权限取用
+
+---
+
+## 附图
+
+**开源仓库**（Public，MIT，7 个话题标签）
+
+![仓库首页](docs/repo-page.png)
+
+**持续集成**（Windows / Ubuntu / macOS × Node 22 / 24，全部通过）
+
+![CI 全部通过](docs/ci-matrix.png)
