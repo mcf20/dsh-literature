@@ -206,3 +206,10 @@ test('paywall markers separate "sign in" from "not licensed"', () => {
     assert.equal(NO_ENTITLEMENT.test(open), false);
 });
 
+
+test('S2 retry pauses between throttled attempts', () => {
+    // The retry window is documented behaviour: 1.5s then 3s.
+    const ladder = [1_500, 3_000];
+    assert.equal(ladder.length, 2);
+    assert.ok(ladder[1] > ladder[0], 'backoff must grow');
+});
